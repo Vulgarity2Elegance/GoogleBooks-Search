@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { HashRouter, Route } from "react-router-dom";
+import "./App.css";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Search from "./pages/Search"
+import Save from "./pages/Save"
+import Navbar from "./components/Navbar";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  render() {
+    return (
+      <HashRouter basename="/">
+        <div>
+          <CssBaseline />
+          <Navbar />
+          <Route path="/" component={Search} />
+          <Route path="/save" component={Save}/>
+        </div>
+      </HashRouter>
+    );
+  }
 }
 
 export default App;
+
