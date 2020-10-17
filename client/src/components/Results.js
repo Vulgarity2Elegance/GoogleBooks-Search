@@ -11,12 +11,12 @@ function Results(props) {
         <Grid container justify='space-evenly'>
         {books.map((book) => {
             const key = book.id
-             const title = book.volumeInfo.title
-             const subtitle = book.volumeInfo.subtitle
-             const authors= book.volumeInfo.authors
-             const description= book.volumeInfo.description
-             const picture= book.volumeInfo.imageLinks.thumbnail
-             const url= book.volumeInfo.infoLink
+            const title = book.volumeInfo.title
+            const subtitle = book.volumeInfo.subtitle
+            const authors= book.volumeInfo.authors
+            const description= book.volumeInfo.description
+            const picture= book.volumeInfo.imageLinks.thumbnail
+            const url= book.volumeInfo.infoLink
             return(
                 <Book key={key} title={title} subtitle={subtitle} authors={authors} description={description} picture={picture} url={url} />
             ) 
