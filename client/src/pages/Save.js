@@ -1,12 +1,11 @@
 import React from 'react'
-import { Box } from "@material-ui/core"
 
-
-const Save = () => {
-    return (
-    <Box container="true" justify='center'>
-    </Box>
-    )
+function Save() {
+  return (
+    <div>
+      
+    </div>
+  )
 }
 
 export default Save
