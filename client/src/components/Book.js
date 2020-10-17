@@ -11,8 +11,9 @@ function Book(props) {
 
     const useStyles = makeStyles((theme) => ({
         root: {
-            maxWidth: '100%',
-            flexGrow: 1,
+            margin: "5rem 1rem 5rem 1rem",
+            flexGrow: '1',
+            maxWidth: '400',
             backgroundColor: 'tan'
         },
         expand: {
@@ -26,16 +27,14 @@ function Book(props) {
             transform: 'rotate(180deg)',
         },
         image: {
-            display: 'block',
-            margin: 'auto',
             width: 128,
             height: 196
-        }
+        },
       }));
 
     const classes = useStyles()
-    const [expanded, setExpanded] = useState(false);
 
+    const [expanded, setExpanded] = useState(false);
     const handleExpandClick = () => {
         setExpanded(!expanded);
       };
@@ -43,14 +42,13 @@ function Book(props) {
     const {title, subtitle, authors, picture, description, url} = props;
 
     return(
-    
         <Card className={classes.root}>
             <CardMedia component='img' className={classes.image} image={picture} title={title} />
             <CardHeader
             title={title}
-            subheader={subtitle}/>
+            subheader={authors}/>
             <CardContent variant='caption'>
-                {authors}
+            {subtitle}
             </CardContent>
             <CardActions>
                 <IconButton aria-label='save'>
