@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Card, CardActions, CardContent, CardHeader, CardMedia, IconButton, Typography } from '@material-ui/core'
+import FavoriteBorderSharpIcon from '@material-ui/icons/FavoriteBorderSharp';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import InfoIcon from '@material-ui/icons/Info';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -39,6 +40,10 @@ function Book(props) {
         setExpanded(!expanded);
       };
 
+    const [icon, setIcon] = useState(<FavoriteBorderSharpIcon/>);
+    const handleIconClick = () => {
+        setIcon(<FavoriteIcon/>)
+    }
     const {title, subtitle, authors, picture, description, url} = props;
 
     return(
@@ -51,8 +56,8 @@ function Book(props) {
             {subtitle}
             </CardContent>
             <CardActions>
-                <IconButton aria-label='save'>
-                    <FavoriteIcon />
+                <IconButton aria-label='save' onClick={handleIconClick}>
+                    {icon}
                 </IconButton>
                 <IconButton aria-label='info' href={url} target='_blank'>
                     <InfoIcon/>
